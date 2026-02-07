@@ -1,0 +1,67 @@
+{
+  "data": {
+    "accounts": [
+      {
+        "id": "account-checking-1",
+        "name": "Chase Checking",
+        "type": "checking",
+        "on_budget": true,
+        "closed": false,
+        "note": null,
+        "balance": 250000,
+        "cleared_balance": 250000,
+        "uncleared_balance": 0,
+        "transfer_payee_id": "payee-transfer-1",
+        "direct_import_linked": true,
+        "direct_import_in_error": false,
+        "deleted": false
+      },
+      {
+        "id": "account-savings-1",
+        "name": "High Yield Savings",
+        "type": "savings",
+        "on_budget": true,
+        "closed": false,
+        "note": "Emergency fund",
+        "balance": 1500000,
+        "cleared_balance": 1500000,
+        "uncleared_balance": 0,
+        "transfer_payee_id": "payee-transfer-2",
+        "direct_import_linked": false,
+        "direct_import_in_error": false,
+        "deleted": false
+      },
+      {
+        "id": "account-credit-1",
+        "name": "Chase Sapphire Reserve",
+        "type": "creditCard",
+        "on_budget": true,
+        "closed": false,
+        "note": null,
+        "balance": -85000,
+        "cleared_balance": -80000,
+        "uncleared_balance": -5000,
+        "transfer_payee_id": "payee-transfer-3",
+        "direct_import_linked": true,
+        "direct_import_in_error": false,
+        "deleted": false
+      },
+      {
+        "id": "account-tracking-1",
+        "name": "Home Value",
+        "type": "otherAsset",
+        "on_budget": false,
+        "closed": false,
+        "note": "Tracking net worth",
+        "balance": 50000000,
+        "cleared_balance": 50000000,
+        "uncleared_balance": 0,
+        "transfer_payee_id": "payee-transfer-4",
+        "direct_import_linked": false,
+        "direct_import_in_error": false,
+        "deleted": false
+      }
+    ],
+    "server_knowledge": 12346
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "test": {
+    "YNAB_API_KEY": "test-api-key-12345",
+    "VIA_ENV": "test",
+    "NODE_ENV": "test",
+    "YNAB_SYNC_INTERVAL": "300000",
+    "YNAB_CACHE_TTL": "300",
+    "YNAB_STORAGE_PATH": ":memory:"
+  },
+  "integration": {
+    "YNAB_API_KEY": "integration-test-key",
+    "VIA_ENV": "integration",
+    "NODE_ENV": "test",
+    "YNAB_SYNC_INTERVAL": "60000",
+    "YNAB_CACHE_TTL": "60",
+    "YNAB_STORAGE_PATH": "./test-data/integration.db"
+  },
+  "e2e": {
+    "YNAB_API_KEY": "e2e-test-key",
+    "VIA_ENV": "e2e",
+    "NODE_ENV": "test",
+    "YNAB_SYNC_INTERVAL": "30000",
+    "YNAB_CACHE_TTL": "30",
+    "YNAB_STORAGE_PATH": "./test-data/e2e.db"
+  }
+}
