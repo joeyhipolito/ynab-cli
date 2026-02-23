@@ -321,7 +321,7 @@ func handleMoveCommand(client *api.Client, args []string, jsonOutput bool) error
 	if err != nil {
 		return fmt.Errorf("invalid amount: %s", amountStr)
 	}
-	amountMilliunits := int64(math.Round(f * 1000))
+	amountMilliunits := transform.DollarsToMilliunits(f)
 	args = args[1:]
 
 	fromCategory := ""
