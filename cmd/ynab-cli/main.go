@@ -145,6 +145,26 @@ func run() error {
 
 // handleAddCommand parses and executes the add command.
 func handleAddCommand(client *api.Client, args []string, jsonOutput bool) error {
+	for _, arg := range args {
+		if arg == "--help" || arg == "-h" {
+			fmt.Print(`Usage: ynab add <amount> <payee> [category] [options]
+
+Options:
+  --account <name>       Account (default: first on-budget)
+  --date <YYYY-MM-DD>    Date (default: today)
+  --memo <text>          Transaction memo
+  --json                 Output result as JSON
+  --help, -h             Show this help
+
+Examples:
+  ynab add 50 "Coffee Shop" "Eating Out"
+  ynab add +1000 "Paycheck" --account "Checking"
+  ynab add 75.50 "Grocery Store" "Groceries" --date 2026-02-01
+`)
+			return nil
+		}
+	}
+
 	if len(args) < 2 {
 		return fmt.Errorf("add command requires at least amount and payee\n\nUsage: ynab add <amount> <payee> [category] [--account <name>] [--date <YYYY-MM-DD>] [--memo <text>]")
 	}
