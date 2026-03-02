@@ -64,8 +64,16 @@ func run() error {
 		return cmd.DoctorCmd(jsonOutput)
 	}
 
-	// Resolve access token: config file > environment variable
-	token := config.ResolveToken()
+	// Load config once; fall back to env vars for token and budget ID.
+	cfg, err := config.Load()
+	if err != nil {
+		return fmt.Errorf("loading config: %w", err)
+	}
+
+	token := cfg.AccessToken
+	if token == "" {
+		token = os.Getenv("YNAB_ACCESS_TOKEN")
+	}
 	if token == "" {
 		return fmt.Errorf("no access token found\n\nRun 'ynab configure' to set up, or set YNAB_ACCESS_TOKEN")
 	}
@@ -77,7 +85,10 @@ func run() error {
 	}
 
 	// Set default budget ID from config if available
-	budgetID := config.ResolveBudgetID()
+	budgetID := cfg.DefaultBudgetID
+	if budgetID == "" {
+		budgetID = os.Getenv("YNAB_DEFAULT_BUDGET_ID")
+	}
 	if budgetID != "" {
 		client.SetDefaultBudgetID(budgetID)
 	}
